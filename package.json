@@ -93,7 +93,7 @@
     }
   },
   "resolutions": {
-    "@typescript-eslint/typescript-estree": "^7.8.0"
+    "@typescript-eslint/typescript-estree": "^7.9.0"
   },
   "engines": {
     "node": "^18"
