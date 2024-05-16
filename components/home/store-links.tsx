@@ -58,7 +58,7 @@ export default function StoreLinks({ lng }: LngProps) {
           <div className="grid w-full grid-cols-1 gap-5 px-10 sm:grid-cols-2 sm:px-10 md:grid-cols-4">
             <Link
               className="flex items-center justify-center space-x-2 rounded-full border border-gray-300 px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 dark:text-white/80 max-md:mx-0"
-              href="https://play.google.com/store/apps/details?id=com.chenyifaer.homingpigeon"
+              href="https://play.google.com/store/apps/details?id=com.kjxbyz.watermarkassistant"
               target="_blank"
             >
               <GooglePlay className="h-7 w-7" />
