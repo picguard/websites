@@ -92,9 +92,6 @@
       "react-hook-form": "^7.51.5"
     }
   },
-  "resolutions": {
-    "@typescript-eslint/typescript-estree": "^7.9.0"
-  },
   "engines": {
     "node": "^18"
   },
