@@ -126,8 +126,8 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-wrap-balancer:
-        specifier: ^1.1.0
-        version: 1.1.0(react@18.3.1)
+        specifier: ^1.1.1
+        version: 1.1.1(react@18.3.1)
       rehype-slug:
         specifier: ^6.0.0
         version: 6.0.0
@@ -3093,9 +3093,11 @@ packages:
 
   glob@7.1.6:
     resolution: {integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   global-directory@4.0.1:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
@@ -4495,8 +4497,8 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  react-wrap-balancer@1.1.0:
-    resolution: {integrity: sha512-EhF3jOZm5Fjx+Cx41e423qOv2c2aOvXAtym2OHqrGeMUnwERIyNsRBgnfT3plB170JmuYvts8K2KSPEIerKr5A==}
+  react-wrap-balancer@1.1.1:
+    resolution: {integrity: sha512-AB+l7FPRWl6uZ28VcJ8skkwLn2+UC62bjiw8tQUrZPlEWDVnR9MG0lghyn7EyxuJSsFEpht4G+yh2WikEqQ/5Q==}
     peerDependencies:
       react: '>=16.8.0 || ^17.0.0 || ^18'
 
@@ -4608,6 +4610,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rough-notation@0.5.1:
@@ -10331,7 +10334,7 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  react-wrap-balancer@1.1.0(react@18.3.1):
+  react-wrap-balancer@1.1.1(react@18.3.1):
     dependencies:
       react: 18.3.1
 
