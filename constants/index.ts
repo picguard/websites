@@ -12,7 +12,7 @@ export const platforms: Record<SystemOS, string[]> = {
   ios: [".ipa"],
   android: [".apk", ".aab"],
   macos: [".dmg", ".pkg", ".macos.zip"],
-  windows: [".exe", ".msix"],
+  windows: [".exe", ".msix", ".windows.zip"],
   linux: [".AppImage", ".deb", ".rpm", ".snap", ".linux.zip"],
 };
 export const pageSize: number = 10;
