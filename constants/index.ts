@@ -1,4 +1,4 @@
-import { SystemOS } from "@/types/common";
+import { ExtType, SystemOS } from "@/types/common";
 
 export const cacheLngKey: string = "__picguard_lng__";
 export const cacheThemeKey: string = "__picguard_theme__";
@@ -8,11 +8,23 @@ export const host =
     : "http://localhost:3000";
 export const basePath =
   process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? "/picguard" : "";
-export const platforms: Record<SystemOS, string[]> = {
+export const platforms: Record<SystemOS, ExtType[]> = {
   ios: [".ipa"],
   android: [".apk", ".aab"],
-  macos: [".dmg", ".pkg", ".macos.zip"],
-  windows: [".exe", ".msix", ".windows.zip"],
-  linux: [".AppImage", ".deb", ".rpm", ".snap", ".linux.zip"],
+  macos: [".dmg", ".pkg", { name: ".zip", include: true }],
+  windows: [
+    ".exe",
+    ".msix",
+    { name: ".zip", include: true },
+    { name: ".tar.gz", include: true },
+  ],
+  linux: [
+    ".AppImage",
+    ".deb",
+    ".rpm",
+    ".snap",
+    { name: ".zip", include: true },
+    { name: ".tar.gz", include: true },
+  ],
 };
 export const pageSize: number = 10;

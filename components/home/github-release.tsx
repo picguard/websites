@@ -14,7 +14,7 @@ import { getReleases } from "@/request";
 import { useTranslation } from "@/i18n/client";
 import type { LngProps } from "@/types/i18next-lng";
 import type { Asset, Release } from "@/types/github";
-import type { SystemOS } from "@/types/common";
+import type { ExtType, SystemOS } from "@/types/common";
 
 export default function GithubRelease({ lng }: LngProps) {
   const { t } = useTranslation(lng, "common");
@@ -42,12 +42,24 @@ export default function GithubRelease({ lng }: LngProps) {
       windows: [],
       linux: [],
     };
-    Object.keys(platforms).forEach((key: string) => {
+    Object.keys(platforms).forEach((platform: string) => {
       const matcher = (name: string) =>
-        platforms[key as SystemOS].some((platform: string) =>
-          name.endsWith(platform),
-        );
-      packages[key as SystemOS] =
+        platforms[platform as SystemOS].some((ext: ExtType) => {
+          // 如果是字符串, 直接判断文件后缀
+          if (typeof ext === "string") {
+            return name.endsWith(ext);
+          } else {
+            // 如果不是字符串类型, 则根据include的值来判断
+            // 1. 如果为true, 判断文件后缀和系统类型
+            // 2. 如果为false, 直接判断文件后缀
+            const include = ext?.include;
+            const extName = ext?.name;
+            return include
+              ? name.endsWith(extName) && name.includes(platform)
+              : name.endsWith(extName);
+          }
+        });
+      packages[platform as SystemOS] =
         assets.filter(({ name }) => name && matcher(name)) || [];
     });
     return packages;
