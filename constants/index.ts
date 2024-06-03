@@ -11,13 +11,13 @@ export const basePath =
 export const platforms: Record<SystemOS, ExtType[]> = {
   ios: [".ipa"],
   android: [".apk", ".aab"],
-  macos: [".dmg", ".pkg", { name: ".zip", include: true }],
-  windows: [
-    ".exe",
-    ".msix",
+  macos: [
+    ".dmg",
+    ".pkg",
     { name: ".zip", include: true },
     { name: ".tar.gz", include: true },
   ],
+  windows: [".exe", ".msix", { name: ".zip", include: true }],
   linux: [
     ".AppImage",
     ".deb",
