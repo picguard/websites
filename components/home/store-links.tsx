@@ -4,8 +4,7 @@ import Balancer from "react-wrap-balancer";
 import {
   AppStore,
   GooglePlay,
-  Microsoft,
-  Apple,
+  MicrosoftStore,
   Linux,
 } from "@/components/shared/icons";
 import { getLatestRelease } from "@/request";
@@ -81,7 +80,7 @@ export default function StoreLinks({ lng }: LngProps) {
               href="https://apps.apple.com/us/app/id6477482447"
               target="_blank"
             >
-              <Apple className="h-7 w-7" />
+              <AppStore className="h-7 w-7" />
               <p>
                 <span className="sm:inline-block">Mac App Store</span>
               </p>
@@ -91,7 +90,7 @@ export default function StoreLinks({ lng }: LngProps) {
               href="https://www.microsoft.com/store/apps/9NCC0LJBG7TB"
               target="_blank"
             >
-              <Microsoft className="h-7 w-7" />
+              <MicrosoftStore className="h-7 w-7" />
               <p>
                 <span className="sm:inline-block">Microsoft Store</span>
               </p>
