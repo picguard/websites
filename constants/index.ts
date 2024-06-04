@@ -23,6 +23,7 @@ export const platforms: Record<SystemOS, ExtType[]> = {
     ".deb",
     ".rpm",
     ".snap",
+    ".flatpak",
     { name: ".zip", include: true },
     { name: ".tar.gz", include: true },
   ],
