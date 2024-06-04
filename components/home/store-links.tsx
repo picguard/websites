@@ -14,41 +14,29 @@ import type { Release } from "@/types/github";
 
 export default function StoreLinks({ lng }: LngProps) {
   const { t } = useTranslation(lng, "common");
-  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<Release>({});
-  const [error, setError] = useState<any>(null);
 
   const tag_name = useMemo(() => {
     return data.tag_name;
   }, [data.tag_name]);
 
   const loadData = () => {
-    setLoading(true);
     getLatestRelease()
       .then((res) => {
-        setLoading(false);
         if (res?.code === 0) {
           setData(res?.data || {});
         } else {
-          setError(res?.msg);
+          console.error(res?.msg);
         }
       })
       .catch((error) => {
         console.error(error);
-        setLoading(false);
-        setError(error.message || error.toString());
       });
   };
 
   useEffect(() => {
     loadData();
   }, []);
-
-  const disabled = useMemo(() => {
-    if (loading) return true;
-
-    return !!error;
-  }, [loading, error]);
 
   return (
     <>
