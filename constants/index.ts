@@ -29,3 +29,4 @@ export const platforms: Record<SystemOS, ExtType[]> = {
   ],
 };
 export const pageSize: number = 10;
+export const sitemapUrls = ["release"];

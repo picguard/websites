@@ -1,14 +1,15 @@
 import { MetadataRoute } from "next";
 import { allPosts } from "contentlayer/generated";
-import { basePath } from "@/constants";
+import { basePath, sitemapUrls } from "@/constants";
+import { languages } from "@/i18n/settings";
 
 const domain =
   process.env.NODE_ENV === "production"
-    ? `https://www.chenyifaer.com${basePath}`
+    ? `https://www.kjxbyz.com${basePath}`
     : `http://localhost:3000${basePath}`;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const sitemaps = allPosts
+  let sitemaps = allPosts
     .sort((a, b) => {
       return new Date(a.publishedAt) > new Date(b.publishedAt) ? -1 : 1;
     })
@@ -18,6 +19,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     }));
+
+  sitemaps = sitemaps.concat(
+    sitemapUrls.flatMap((url: string) => {
+      return languages.map((lng: string) => ({
+        url: `${domain}/${lng}/${url}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 1,
+      }));
+    }),
+  );
 
   return sitemaps as MetadataRoute.Sitemap;
 }
