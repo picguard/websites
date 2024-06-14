@@ -2,12 +2,12 @@ import { ExtType, SystemOS } from "@/types/common";
 
 export const cacheLngKey: string = "__picguard_lng__";
 export const cacheThemeKey: string = "__picguard_theme__";
-export const host =
-  process.env.NODE_ENV === "production"
-    ? "https://www.kjxbyz.com"
-    : "http://localhost:3000";
 export const basePath =
   process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? "/picguard" : "";
+export const domain =
+  process.env.NODE_ENV === "production"
+    ? `https://www.kjxbyz.com${basePath}`
+    : `http://localhost:3000${basePath}`;
 export const platforms: Record<SystemOS, ExtType[]> = {
   ios: [".ipa"],
   android: [".apk", ".aab"],

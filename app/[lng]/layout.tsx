@@ -12,7 +12,7 @@ import CookieBanner from "@/components/shared/cookie-banner";
 import ScrollToTop from "@/components/layout/scroll-to-top";
 import { languages } from "@/i18n/settings";
 import Footer from "@/components/layout/footer";
-import { basePath, host } from "@/constants";
+import { domain } from "@/constants";
 import { sfPro, inter } from "./fonts";
 import Particles from "./particles";
 import ThemeProvider from "./theme-provider";
@@ -40,9 +40,9 @@ export async function generateMetadata({
     title: "PicGuard",
     description:
       "PicGuard - This app can add watermarks to pictures to prevent them from being used maliciously.",
-    metadataBase: new URL(`${host}${basePath}`),
+    metadataBase: new URL(domain),
     icons: {
-      icon: `${basePath}/logo.png`,
+      icon: `${domain}/logo.png`,
     },
   };
 }
