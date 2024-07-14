@@ -9,7 +9,7 @@ import {
   Linux,
 } from "@/components/shared/icons";
 import GitHubPkg from "@/components/home/github-pkg";
-import { platforms } from "@/constants";
+import { systemExtensions, platforms } from "@/constants";
 import { getReleases } from "@/request";
 import { useTranslation } from "@/i18n/client";
 import type { LngProps } from "@/types/i18next-lng";
@@ -34,6 +34,56 @@ export default function GithubRelease({ lng }: LngProps) {
     return data.tag_name;
   }, [data.tag_name]);
 
+  /**
+   * exclude匹配逻辑
+   *
+   * @param name 文件名
+   * @param exclude 排除字符串或字符串数组
+   * @returns
+   */
+  const excludeMatcher = (name: string, exclude: string | string[]) => {
+    if (typeof exclude === "string") {
+      return name.includes(exclude);
+    } else {
+      return exclude.findLastIndex((item) => name.includes(item)) !== -1;
+    }
+  };
+
+  /**
+   * 根据宿主系统进行分组
+   *
+   * @param name 文件名
+   * @param platform 宿主系统
+   * @returns
+   */
+  const matcher = (name: string, platform: SystemOS) =>
+    systemExtensions[platform].some((ext: ExtType) => {
+      // 如果是字符串, 直接判断文件后缀
+      if (typeof ext === "string") {
+        return name.endsWith(ext);
+      } else {
+        // 如果不是字符串类型, 则根据include的值来判断
+        // 1. 如果为true, 判断文件后缀和系统类型
+        // 2. 如果为false, 直接判断文件后缀
+        const include = ext?.include;
+        const exclude = ext?.exclude;
+        const extName = ext?.name;
+
+        // 如果不为空, 则排出包含此内容的文件
+        if (exclude) {
+          return include
+            ? name.endsWith(extName) &&
+                name.includes(platform) &&
+                !excludeMatcher(name, exclude)
+            : name.endsWith(extName) && !excludeMatcher(name, exclude);
+        }
+
+        return include
+          ? name.endsWith(extName) && name.includes(platform)
+          : name.endsWith(extName);
+      }
+    });
+
   const { ios, android, macos, windows, linux } = useMemo(() => {
     const packages: Record<SystemOS, Asset[]> = {
       ios: [],
@@ -42,27 +92,12 @@ export default function GithubRelease({ lng }: LngProps) {
       windows: [],
       linux: [],
     };
-    Object.keys(platforms).forEach((platform: string) => {
-      const matcher = (name: string) =>
-        platforms[platform as SystemOS].some((ext: ExtType) => {
-          // 如果是字符串, 直接判断文件后缀
-          if (typeof ext === "string") {
-            return name.endsWith(ext);
-          } else {
-            // 如果不是字符串类型, 则根据include的值来判断
-            // 1. 如果为true, 判断文件后缀和系统类型
-            // 2. 如果为false, 直接判断文件后缀
-            const include = ext?.include;
-            const extName = ext?.name;
-            return include
-              ? name.endsWith(extName) && name.includes(platform)
-              : name.endsWith(extName);
-          }
-        });
-      packages[platform as SystemOS] =
-        assets.filter(({ name }) => name && matcher(name)) || [];
+    platforms.forEach((platform: SystemOS) => {
+      packages[platform] =
+        assets.filter(({ name }) => name && matcher(name, platform)) || [];
     });
     return packages;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [assets]);
 
   const loadData = () => {
