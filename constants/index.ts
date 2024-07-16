@@ -26,7 +26,7 @@ export const systemExtensions: SystemExtensions = {
     { name: ".zip", include: true },
     { name: ".tar.gz", include: true },
   ],
-  windows: [".exe", ".msix", { name: ".zip", include: true }],
+  windows: [".exe", ".msi", ".msix", { name: ".zip", include: true }],
   linux: [
     ".AppImage",
     ".deb",
