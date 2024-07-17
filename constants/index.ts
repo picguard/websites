@@ -7,7 +7,7 @@ export const basePath =
   process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? "" : "";
 export const domain =
   process.env.NODE_ENV === "production"
-    ? `https://www.kjxbyz.com${basePath}`
+    ? `https://www.picguard.app${basePath}`
     : `http://localhost:3000${basePath}`;
 
 export const platforms: SystemOSKeys[] = [
