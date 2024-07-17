@@ -4,7 +4,7 @@ export const cacheLngKey: string = "__picguard_lng__";
 export const cacheThemeKey: string = "__picguard_theme__";
 
 export const basePath =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? "/picguard" : "";
+  process.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? "" : "";
 export const domain =
   process.env.NODE_ENV === "production"
     ? `https://www.kjxbyz.com${basePath}`
