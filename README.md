@@ -2,8 +2,6 @@
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
 # npm
 npm install
@@ -31,10 +29,6 @@ yarn dev
 ```
 
 ## Production
-
-The production server runs at [https://kjxbyz.com/picguard](https://kjxbyz.com/picguard)
-
-Build the application for production:
 
 ```bash
 # npm
