@@ -75,7 +75,7 @@ export default function StoreLinks({ lng }: LngProps) {
             </Link>
             <Link
               className="flex items-center justify-center space-x-2 rounded-full border border-gray-300 px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 dark:text-white/80 max-md:mx-0"
-              href="https://www.microsoft.com/store/apps/9NCC0LJBG7TB"
+              href="https://apps.microsoft.com/detail/9NCC0LJBG7TB"
               target="_blank"
             >
               <MicrosoftStore className="h-7 w-7" />
