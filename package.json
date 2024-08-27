@@ -36,7 +36,7 @@
     "next": "14.2.6",
     "next-contentlayer2": "^0.5.0",
     "next-themes": "^0.3.0",
-    "nextjs-toploader": "^1.6.12",
+    "nextjs-toploader": "^2.6.12",
     "react": "^18.3.1",
     "react-big-calendar": "^1.13.4",
     "react-cropper": "^2.3.3",
