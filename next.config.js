@@ -8,6 +8,15 @@ const nextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   swcMinify: true,
+  async redirects() {
+    return [
+      {
+        source: "/support",
+        destination: "https://github.com/picguard/picguard/discussions",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       { hostname: "lh3.googleusercontent.com" },
