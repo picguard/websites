@@ -169,8 +169,8 @@ importers:
         specifier: ^18.3.4
         version: 18.3.4
       '@types/react-big-calendar':
-        specifier: ^1.8.9
-        version: 1.8.9
+        specifier: ^1.8.10
+        version: 1.8.10
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
@@ -2259,8 +2259,8 @@ packages:
   '@types/prop-types@15.7.9':
     resolution: {integrity: sha512-n1yyPsugYNSmHgxDFjicaI2+gCNjsBck8UX9kuofAKlc0h1bL+20oSF72KeNaW2DUlesbEVCFgyV2dPGTiY42g==}
 
-  '@types/react-big-calendar@1.8.9':
-    resolution: {integrity: sha512-HIHLUxR3PzWHrFdZ00VnCMvDjAh5uzlL0vMC2b7tL3bKaAJsqq9T8h+x0GVeDbZfMfHAd1cs5tZBhVvourNJXQ==}
+  '@types/react-big-calendar@1.8.10':
+    resolution: {integrity: sha512-HczsLxbLic0wppijPYay9fNaJjYAM9umdKY/0Jats1u3RyYHl+6uHX+uwMVk/ssX6JfuP6tKOhvVld/9xgtFgA==}
 
   '@types/react-dom@18.3.0':
     resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
@@ -7549,7 +7549,7 @@ snapshots:
 
   '@types/prop-types@15.7.9': {}
 
-  '@types/react-big-calendar@1.8.9':
+  '@types/react-big-calendar@1.8.10':
     dependencies:
       '@types/date-arithmetic': 4.1.4
       '@types/prop-types': 15.7.9
