@@ -11,6 +11,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/issues",
+        destination: "https://github.com/picguard/picguard/issues",
+        permanent: true,
+      },
+      {
         source: "/support",
         destination: "https://github.com/picguard/picguard/discussions",
         permanent: true,
