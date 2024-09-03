@@ -15,11 +15,6 @@ const nextConfig = {
         destination: "https://github.com/picguard/picguard/issues",
         permanent: true,
       },
-      {
-        source: "/support",
-        destination: "https://github.com/picguard/picguard/discussions",
-        permanent: true,
-      },
     ];
   },
   images: {
