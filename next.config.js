@@ -13,7 +13,7 @@ const nextConfig = {
       {
         source: "/issues",
         destination: "https://github.com/picguard/picguard/issues",
-        permanent: true,
+        permanent: false,
       },
     ];
   },
