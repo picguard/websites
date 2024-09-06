@@ -45,6 +45,28 @@ export default function Home({
     })
     .at(0);
 
+  const SectionTip = useCallback(
+    ({
+      title,
+      children,
+      className,
+    }: {
+      title: string;
+      children: React.ReactNode;
+      className?: string;
+    }) => (
+      <div
+        className={`mt-14 w-full max-w-screen-xl animate-fade-up px-5 xl:px-0 ${className || ""}`}
+      >
+        <div className="flex flex-row flex-nowrap items-center justify-center text-center text-3xl before:mr-5 before:h-[1px] before:max-w-xs before:flex-1 before:border-b-[1px] before:border-dashed before:border-b-gray-300 before:content-[''] after:ml-5 after:h-[1px] after:max-w-xs after:flex-1 after:border-b-[1px] after:border-dashed after:border-b-gray-300 after:content-[''] dark:before:border-b-gray-600 dark:after:border-b-gray-600">
+          {title}
+        </div>
+        {children}
+      </div>
+    ),
+    [],
+  );
+
   const DynamicSection = useCallback(
     ({
       title,
@@ -56,12 +78,7 @@ export default function Home({
       className?: string;
     }) => {
       return (
-        <div
-          className={`mt-14 w-full max-w-screen-xl animate-fade-up px-5 xl:px-0 ${className || ""}`}
-        >
-          <div className="flex flex-row flex-nowrap items-center justify-center text-center text-3xl before:mr-5 before:h-[1px] before:max-w-xs before:flex-1 before:border-b-[1px] before:border-dashed before:border-b-gray-300 before:content-[''] after:ml-5 after:h-[1px] after:max-w-xs after:flex-1 after:border-b-[1px] after:border-dashed after:border-b-gray-300 after:content-[''] dark:before:border-b-gray-600 dark:after:border-b-gray-600">
-            {title}
-          </div>
+        <SectionTip title={title} className={className}>
           <div className="mt-6 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {links.map(({ title, description, demo, url }) => (
               <DynamicCard
@@ -73,7 +90,7 @@ export default function Home({
               />
             ))}
           </div>
-        </div>
+        </SectionTip>
       );
     },
     [],
@@ -198,10 +215,30 @@ export default function Home({
         </div>
       </div>
       <DynamicSection
-        className="mb-20 mt-32"
+        className="mt-32"
         title={t("features")}
         links={features}
       />
+      <SectionTip title={t("get-picguard")} className="mb-20 mt-32">
+        <div className="w-full px-5 xl:px-0">
+          <div
+            className="mt-6 flex w-full animate-fade-up items-center justify-center space-x-5 opacity-0"
+            style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
+          >
+            <Link
+              className="flex min-w-32 max-w-fit items-center justify-center space-x-2 rounded-lg bg-blue-400 px-5 py-2 text-sm text-gray-700 shadow-md transition-colors hover:bg-blue-500 dark:bg-blue-500 dark:text-white/80 dark:hover:bg-blue-600"
+              href="download"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <RiDownload2Line className="h-6 w-6" />
+              <p>
+                <span className="sm:inline-block">{t("download")}</span>
+              </p>
+            </Link>
+          </div>
+        </div>
+      </SectionTip>
     </>
   );
 }
