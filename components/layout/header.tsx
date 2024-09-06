@@ -66,7 +66,7 @@ export default function Header(props: LngProps) {
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>{t("menus.goto-picguard")}</p>
+                      <p>{t("menus.goto")}</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>

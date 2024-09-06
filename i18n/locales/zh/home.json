@@ -1,5 +1,5 @@
 {
-  "privacy": "隐私保护",
+  "privacy": "隐私",
   "privacy-description": "本app不会上传任何图片到服务器，所有操作均在本地完成。",
   "free": "免费",
   "free-description": "PicGuard免费使用。无广告、无隐藏付费。",
@@ -9,6 +9,6 @@
   "cross-platform-description": "可在Web、移动设备和桌面上使用。",
   "open-source": "代码开源",
   "open-source-description": "源代码是公开的。任何人都可以为该项目做出贡献。",
-  "pro": "Pro版收费",
+  "pro": "专业版收费",
   "pro-description": "包含免费版的所有功能，还可以自定义字体、字体大小和间距。"
 }
