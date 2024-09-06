@@ -20,6 +20,7 @@ import {
 } from "react-icons/ri";
 import { FaBlog } from "react-icons/fa";
 import Comment from "@/components/home/comment";
+import { useAppTheme } from "@/lib/hooks";
 import { useTranslation } from "@/i18n/client";
 import { basePath } from "@/constants";
 import { allPosts } from "contentlayer/generated";
@@ -40,6 +41,8 @@ export default function Home({
   const { t: th } = useTranslation(params.lng, "header");
   const { t: ts } = useTranslation(params.lng, "support");
   const { t: tm } = useTranslation(params.lng, "comments");
+
+  const { resolvedTheme: theme } = useAppTheme();
 
   const post = allPosts
     .filter((post) => post.slug.startsWith(`${params.lng}/blog`))
@@ -230,7 +233,13 @@ export default function Home({
             className="mt-6 flex w-full animate-fade-up items-center justify-center space-x-5 opacity-0"
             style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
           >
-            <Marquee pauseOnHover autoFill className="px-4">
+            <Marquee
+              pauseOnHover
+              autoFill
+              gradient
+              gradientColor={theme === "light" ? "#ffffff" : "#020817"}
+              className="mx-4"
+            >
               {Array.from({ length: 8 }).map((_: any, idx: number) => {
                 return (
                   <Comment
