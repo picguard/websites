@@ -1,0 +1,14 @@
+{
+  "privacy": "Privacy",
+  "privacy-description": "This app will not upload any pictures to the server, all operations are completed locally.",
+  "free": "Free",
+  "free-description": "PicGuard is free to use. No ads, no hidden costs.",
+  "customizable": "Customizable",
+  "customizable-description": "Customizable watermark color and opacity.",
+  "cross-platform": "Cross-platform",
+  "cross-platform-description": "Available on web, mobile and desktop.",
+  "open-source": "Open Source",
+  "open-source-description": "The source code is publicly available. Anyone can contribute to the project.",
+  "pro": "Paid for Pro",
+  "pro-description": "Includes all the features of the free version, and can also customize the font, font size and spacing."
+}

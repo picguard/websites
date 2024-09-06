@@ -1,15 +1,30 @@
 "use client";
 import React, { useCallback } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import { RoughNotation } from "react-rough-notation";
+import {
+  MdOutlinePrivacyTip,
+  MdDevices,
+  MdOutlinePaid,
+  MdOutlineDashboardCustomize,
+} from "react-icons/md";
+import {
+  RiCommunityLine,
+  RiDownload2Line,
+  RiOpenSourceLine,
+  RiHeart3Line,
+} from "react-icons/ri";
 import { FaBlog } from "react-icons/fa";
-import Image from "next/image";
-import GithubRelease from "@/components/home/github-release";
-import StoreLinks from "@/components/home/store-links";
 import { useTranslation } from "@/i18n/client";
 import { allPosts } from "contentlayer/generated";
 import { basePath } from "@/constants";
+
+const DynamicCard = dynamic(() => import("@/components/home/card"), {
+  ssr: false,
+});
 
 export default function Home({
   params,
@@ -19,7 +34,9 @@ export default function Home({
   };
 }) {
   const { t } = useTranslation(params.lng, "common");
+  const { t: tf } = useTranslation(params.lng, "home");
   const { t: th } = useTranslation(params.lng, "header");
+  const { t: ts } = useTranslation(params.lng, "support");
 
   const post = allPosts
     .filter((post) => post.slug.startsWith(`${params.lng}/blog`))
@@ -28,29 +45,84 @@ export default function Home({
     })
     .at(0);
 
-  const Section = useCallback(
+  const DynamicSection = useCallback(
     ({
       title,
-      children,
+      links,
       className,
     }: {
       title: string;
-      children: React.ReactNode;
+      links: any[];
       className?: string;
     }) => {
       return (
         <div
-          className={`mt-20 w-full max-w-screen-xl animate-fade-up px-5 xl:px-0 ${className || ""}`}
+          className={`mt-14 w-full max-w-screen-xl animate-fade-up px-5 xl:px-0 ${className || ""}`}
         >
           <div className="flex flex-row flex-nowrap items-center justify-center text-center text-3xl before:mr-5 before:h-[1px] before:max-w-xs before:flex-1 before:border-b-[1px] before:border-dashed before:border-b-gray-300 before:content-[''] after:ml-5 after:h-[1px] after:max-w-xs after:flex-1 after:border-b-[1px] after:border-dashed after:border-b-gray-300 after:content-[''] dark:before:border-b-gray-600 dark:after:border-b-gray-600">
             {title}
           </div>
-          {children}
+          <div className="mt-6 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {links.map(({ title, description, demo, url }) => (
+              <DynamicCard
+                key={title}
+                title={title}
+                description={description}
+                demo={demo}
+                url={url}
+              />
+            ))}
+          </div>
         </div>
       );
     },
     [],
   );
+
+  const features = [
+    {
+      title: tf("privacy"),
+      description: tf("privacy-description"),
+      demo: (
+        <MdOutlinePrivacyTip className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+    },
+    {
+      title: tf("free"),
+      description: tf("free-description"),
+      demo: (
+        <RiHeart3Line className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+    },
+    {
+      title: tf("customizable"),
+      description: tf("customizable-description"),
+      demo: (
+        <MdOutlineDashboardCustomize className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+    },
+    {
+      title: tf("cross-platform"),
+      description: tf("cross-platform-description"),
+      demo: (
+        <MdDevices className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+    },
+    {
+      title: tf("open-source"),
+      description: tf("open-source-description"),
+      demo: (
+        <RiOpenSourceLine className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+    },
+    {
+      title: tf("pro"),
+      description: tf("pro-description"),
+      demo: (
+        <MdOutlinePaid className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      ),
+    },
+  ];
 
   return (
     <>
@@ -97,13 +169,39 @@ export default function Home({
             </RoughNotation>
           </Balancer>
         </p>
+        <div
+          className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
+          style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
+        >
+          <Link
+            className="flex min-w-32 max-w-fit items-center justify-center space-x-2 rounded-full bg-blue-300 px-5 py-2 text-sm text-gray-700 shadow-md transition-colors hover:bg-blue-400 dark:bg-blue-500 dark:text-white/80 dark:hover:bg-blue-600"
+            href="download"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <RiDownload2Line className="h-6 w-6" />
+            <p>
+              <span className="sm:inline-block">{t("download")}</span>
+            </p>
+          </Link>
+          <Link
+            className="flex min-w-32 max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 dark:bg-black dark:text-white/80"
+            href="support"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <RiCommunityLine className="h-6 w-6" />
+            <p>
+              <span className="sm:inline-block">{ts("community")}</span>
+            </p>
+          </Link>
+        </div>
       </div>
-      <Section className="mt-32" title={t("beta")}>
-        <GithubRelease lng={params.lng} />
-      </Section>
-      <Section className="mb-20 mt-32" title={t("store")}>
-        <StoreLinks lng={params.lng} />
-      </Section>
+      <DynamicSection
+        className="mb-20 mt-32"
+        title={t("features")}
+        links={features}
+      />
     </>
   );
 }

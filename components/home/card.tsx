@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode } from "react";
+import { ReactNode, useCallback } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Balancer from "react-wrap-balancer";
@@ -13,10 +13,18 @@ export default function Card({
   title: string;
   description: string;
   demo: ReactNode;
-  url: string;
+  url?: string;
 }) {
-  return (
-    <Link href={url} target="_blank" rel="noreferrer">
+  const Content = useCallback(
+    ({
+      title,
+      description,
+      demo,
+    }: {
+      title: string;
+      description: string;
+      demo: ReactNode;
+    }) => (
       <div className="relative col-span-1 h-96 overflow-hidden rounded-xl border border-gray-200 hover:shadow-md dark:border-gray-700 dark:hover:shadow-gray-700">
         <div className="flex h-60 items-center justify-center">{demo}</div>
         <div className="mx-auto max-w-md text-center">
@@ -51,6 +59,15 @@ export default function Card({
           </div>
         </div>
       </div>
+    ),
+    [],
+  );
+
+  return url ? (
+    <Link href={url} target="_blank" rel="noreferrer">
+      <Content title={title} description={description} demo={demo} />
     </Link>
+  ) : (
+    <Content title={title} description={description} demo={demo} />
   );
 }
