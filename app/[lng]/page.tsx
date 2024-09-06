@@ -4,6 +4,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Balancer from "react-wrap-balancer";
+import Marquee from "react-fast-marquee";
 import { RoughNotation } from "react-rough-notation";
 import {
   MdOutlinePrivacyTip,
@@ -18,9 +19,10 @@ import {
   RiHeart3Line,
 } from "react-icons/ri";
 import { FaBlog } from "react-icons/fa";
+import Comment from "@/components/home/comment";
 import { useTranslation } from "@/i18n/client";
-import { allPosts } from "contentlayer/generated";
 import { basePath } from "@/constants";
+import { allPosts } from "contentlayer/generated";
 
 const DynamicCard = dynamic(() => import("@/components/home/card"), {
   ssr: false,
@@ -37,6 +39,7 @@ export default function Home({
   const { t: tf } = useTranslation(params.lng, "home");
   const { t: th } = useTranslation(params.lng, "header");
   const { t: ts } = useTranslation(params.lng, "support");
+  const { t: tm } = useTranslation(params.lng, "comments");
 
   const post = allPosts
     .filter((post) => post.slug.startsWith(`${params.lng}/blog`))
@@ -54,16 +57,18 @@ export default function Home({
       title: string;
       children: React.ReactNode;
       className?: string;
-    }) => (
-      <div
-        className={`mt-14 w-full max-w-screen-xl animate-fade-up px-5 xl:px-0 ${className || ""}`}
-      >
-        <div className="flex flex-row flex-nowrap items-center justify-center text-center text-3xl before:mr-5 before:h-[1px] before:max-w-xs before:flex-1 before:border-b-[1px] before:border-dashed before:border-b-gray-300 before:content-[''] after:ml-5 after:h-[1px] after:max-w-xs after:flex-1 after:border-b-[1px] after:border-dashed after:border-b-gray-300 after:content-[''] dark:before:border-b-gray-600 dark:after:border-b-gray-600">
-          {title}
+    }) => {
+      return (
+        <div
+          className={`mt-14 w-full max-w-screen-xl animate-fade-up px-5 xl:px-0 ${className || ""}`}
+        >
+          <div className="flex flex-row flex-nowrap items-center justify-center text-center text-3xl before:mr-5 before:h-[1px] before:max-w-xs before:flex-1 before:border-b-[1px] before:border-dashed before:border-b-gray-300 before:content-[''] after:ml-5 after:h-[1px] after:max-w-xs after:flex-1 after:border-b-[1px] after:border-dashed after:border-b-gray-300 after:content-[''] dark:before:border-b-gray-600 dark:after:border-b-gray-600">
+            {title}
+          </div>
+          {children}
         </div>
-        {children}
-      </div>
-    ),
+      );
+    },
     [],
   );
 
@@ -219,6 +224,28 @@ export default function Home({
         title={t("features")}
         links={features}
       />
+      <SectionTip title={t("comments")} className="mt-32">
+        <div className="w-full px-5 xl:px-0">
+          <div
+            className="mt-6 flex w-full animate-fade-up items-center justify-center space-x-5 opacity-0"
+            style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
+          >
+            <Marquee pauseOnHover autoFill className="px-4">
+              {Array.from({ length: 8 }).map((_: any, idx: number) => {
+                return (
+                  <Comment
+                    key={idx}
+                    lng={params.lng}
+                    author={tm(`author${idx}`)}
+                    flag={tm(`flag${idx}`)}
+                    comment={tm(`comment${idx}`)}
+                  />
+                );
+              })}
+            </Marquee>
+          </div>
+        </div>
+      </SectionTip>
       <SectionTip title={t("get-picguard")} className="mb-20 mt-32">
         <div className="w-full px-5 xl:px-0">
           <div
