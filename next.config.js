@@ -19,6 +19,10 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
+      { hostname: "raw.githubusercontent.com" },
+      { hostname: "microsoft.com" },
+      { hostname: "snapcraft.io" },
+      { hostname: "flathub.org" },
       { hostname: "lh3.googleusercontent.com" },
       { hostname: "visitor-badge.laobi.icu" },
     ],

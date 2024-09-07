@@ -19,14 +19,14 @@ export const platforms: SystemOSKeys[] = [
 ];
 export const systemExtensions: SystemExtensions = {
   ios: [".ipa"],
-  android: [".apk", ".aab"],
+  android: [".apk" /*, ".aab"*/],
   macos: [
     ".dmg",
     { name: ".pkg", exclude: "appstore" },
     { name: ".zip", include: true },
     { name: ".tar.gz", include: true },
   ],
-  windows: [".exe", ".msi", ".msix", { name: ".zip", include: true }],
+  windows: [".exe", ".msi", /* ".msix",*/ { name: ".zip", include: true }],
   linux: [
     ".AppImage",
     ".deb",

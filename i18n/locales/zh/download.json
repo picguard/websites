@@ -1,0 +1,8 @@
+{
+  "app-store": "应用商店",
+  "app-store-description": "适合大多数用户",
+  "binaries": "二进制文件",
+  "binaries-description": "可供离线使用的下载",
+  "package-managers": "包管理器",
+  "package-managers-description": "通过终端安装"
+}
