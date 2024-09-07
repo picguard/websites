@@ -147,7 +147,7 @@ export default function PkgCard({
   }, [theme]);
 
   return storeLinks[platform] ? (
-    <div className="mt-10 flex w-full max-w-screen-xl animate-fade-up flex-col rounded-xl border border-gray-200 p-4 hover:shadow-md dark:border-gray-700 dark:hover:shadow-gray-700">
+    <div className="flex w-full max-w-screen-xl animate-fade-up flex-col rounded-xl border border-gray-200 p-4 hover:shadow-md dark:border-gray-700 dark:hover:shadow-gray-700">
       <span className="text-xl font-bold">{t("package-managers")}</span>
       <span className="text-base text-gray-600 dark:text-white/80">
         {t("package-managers-description")}
