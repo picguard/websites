@@ -197,7 +197,11 @@ export default function Home({
       >
         <div className="mt-6 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           <StoreCard lng={params.lng} platform={platform} />
-          <BinariesCard lng={params.lng} assets={availableAssets[platform]} />
+          <BinariesCard
+            lng={params.lng}
+            platform={platform}
+            assets={availableAssets[platform]}
+          />
           <PkgCard lng={params.lng} platform={platform} />
         </div>
       </div>
