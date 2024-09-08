@@ -19,7 +19,7 @@ export default function StoreCard({
           </span>
           <Link
             target="_blank"
-            href="https://apps.apple.com/us/app/id6470935922"
+            href="https://apps.apple.com/us/app/id6477481308"
           >
             <img
               width="220"
@@ -113,7 +113,7 @@ export default function StoreCard({
           </span>
           <Link
             target="_blank"
-            href="https://apps.apple.com/us/app/id6477482447"
+            href="https://apps.apple.com/us/app/id6477482447?mt=12"
           >
             <img
               width="220"
@@ -126,7 +126,7 @@ export default function StoreCard({
           </span>
           <Link
             target="_blank"
-            href="https://apps.apple.com/us/app/id6602890242"
+            href="https://apps.apple.com/us/app/id6602890242?mt=12"
           >
             <img
               width="220"
