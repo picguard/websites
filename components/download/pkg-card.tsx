@@ -115,14 +115,14 @@ export default function PkgCard({
             />
           </div>
           <span className="mt-6 text-gray-600 dark:text-white/80">
-            Arch/Manjaro (TODO)
+            Arch/Manjaro
           </span>
           <div className="mb-2 mt-2 flex flex-col px-2">
             <span className="mb-2 text-gray-600 dark:text-white/80">
-              With pamac
+              With pacman
             </span>
             <CopyBlock
-              text="sudo pamac install picguard"
+              text="sudo pacman -S picguard-bin"
               language="bash"
               theme={{ mode: theme as any }}
               showLineNumbers
@@ -132,7 +132,7 @@ export default function PkgCard({
               With yay
             </span>
             <CopyBlock
-              text="yay -Sy picguard"
+              text="yay -Sy picguard-bin"
               language="bash"
               theme={{ mode: theme as any }}
               showLineNumbers
