@@ -17,10 +17,7 @@ export default function StoreCard({
           <span className="mb-2 mt-2 text-gray-600 dark:text-white/80">
             Free version
           </span>
-          <Link
-            target="_blank"
-            href="https://apps.apple.com/us/app/id6477481308"
-          >
+          <Link target="_blank" href="https://apps.apple.com/app/id6477481308">
             <img
               width="220"
               alt="Get it on App Store"
@@ -30,10 +27,7 @@ export default function StoreCard({
           <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
             Pro version
           </span>
-          <Link
-            target="_blank"
-            href="https://apps.apple.com/us/app/id6602890294"
-          >
+          <Link target="_blank" href="https://apps.apple.com/app/id6602890294">
             <img
               width="220"
               alt="Get it on App Store"
@@ -128,7 +122,7 @@ export default function StoreCard({
           </span>
           <Link
             target="_blank"
-            href="https://apps.apple.com/us/app/id6477482447?mt=12"
+            href="https://apps.apple.com/app/id6477482447?mt=12"
           >
             <img
               width="220"
@@ -141,7 +135,7 @@ export default function StoreCard({
           </span>
           <Link
             target="_blank"
-            href="https://apps.apple.com/us/app/id6602890242?mt=12"
+            href="https://apps.apple.com/app/id6602890242?mt=12"
           >
             <img
               width="220"
