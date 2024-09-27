@@ -69,6 +69,29 @@ export default function StoreCard({
               />
             </Link>
           </div>
+          <span className="mt-6 text-gray-600 dark:text-white/80">Amazon</span>
+          <div className="mb-2 mt-2 flex flex-col px-2">
+            <span className="mb-2 text-gray-600 dark:text-white/80">
+              Free version
+            </span>
+            <Link target="_blank" href="https://www.amazon.com/dp/B0DH3V8FQ3">
+              <img
+                width="220"
+                alt="Get it on Amazon App Store"
+                src="https://raw.githubusercontent.com/picguard/picguard/main/docs/assets/Download-on-the-Amazon-App-Store.png"
+              />
+            </Link>
+            <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
+              Pro version
+            </span>
+            <Link target="_blank" href="https://www.amazon.com/dp/B0DHZ7BW41">
+              <img
+                width="220"
+                alt="Get it on Amazon App Store"
+                src="https://raw.githubusercontent.com/picguard/picguard/main/docs/assets/Download-on-the-Amazon-App-Store.png"
+              />
+            </Link>
+          </div>
           <span className="mt-6 text-gray-600 dark:text-white/80">
             F-Droid (TODO)
           </span>
@@ -99,19 +122,6 @@ export default function StoreCard({
             {/*    src="https://raw.githubusercontent.com/picguard/picguard/main/docs/assets/Download-on-the-F-Droid.svg"*/}
             {/*  />*/}
             {/*</Link>*/}
-          </div>
-          <span className="mt-6 text-gray-600 dark:text-white/80">Amazon</span>
-          <div className="mb-2 mt-2 flex flex-col px-2">
-            <span className="mb-2 text-gray-600 dark:text-white/80">
-              Free version
-            </span>
-            <Link target="_blank" href="https://www.amazon.com/dp/B0DH3V8FQ3">
-              <img
-                width="220"
-                alt="Get it on Amazon App Store"
-                src="https://raw.githubusercontent.com/picguard/picguard/main/docs/assets/Download-on-the-Amazon-App-Store.png"
-              />
-            </Link>
           </div>
         </>
       ),
