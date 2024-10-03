@@ -1,0 +1,16 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "43V9N6VW8L.com.kjxbyz.watermarkassistant",
+                "paths": [ "*" ]
+            }
+        ]
+    },
+    "webcredentials": {
+        "apps": [
+            "43V9N6VW8L.com.kjxbyz.watermarkassistant"
+        ]
+    }
+}

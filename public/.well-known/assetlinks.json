@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kjxbyz.watermarkassistant",
+      "sha256_cert_fingerprints": [
+        "E0:BE:5D:D1:C5:1F:AA:B4:FF:6F:40:95:B0:78:A5:56:32:71:BB:92:23:27:54:FC:B9:80:19:57:E7:8A:66:2E"
+      ]
+    }
+  }
+]
