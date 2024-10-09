@@ -157,6 +157,19 @@ export default function StoreCard({
               src="https://get.microsoft.com/images/en-us%20dark.svg"
             />
           </Link>
+          <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
+            Pro version
+          </span>
+          <Link
+            target="_blank"
+            href="https://apps.microsoft.com/detail/9N0ZV9Q5SVCX?mode=full"
+          >
+            <img
+              width="220"
+              alt="Get it on Windows Store"
+              src="https://get.microsoft.com/images/en-us%20dark.svg"
+            />
+          </Link>
         </>
       ),
       linux: (
