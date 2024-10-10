@@ -4,7 +4,8 @@
     "system": "Auto Mode",
     "dark": "Dark Mode",
     "light": "Light Mode",
-    "goto": "Go to PicGuard"
+    "goto": "Go to PicGuard",
+    "blog": "Blog"
   },
   "languages": {
     "zh": "Chinese",

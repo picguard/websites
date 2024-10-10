@@ -41,8 +41,8 @@ export default async function Blog({
     <div className="w-full max-w-6xl px-4 sm:px-6">
       <div className="pb-12 md:pb-20">
         {/* Page header */}
-        <div className="max-w-3xl pb-12 text-center md:pb-20 md:text-left">
-          <h1 className="h1 mb-4">Blog</h1>
+        <div className="pb-12 text-center md:pb-20">
+          <h1 className="h1 mb-4 text-center text-5xl">Blog</h1>
           {/*<p className="text-xl text-gray-600">*/}
           {/*  Stay up to date on the latest from Simple and best news from the Dev*/}
           {/*  world.*/}
