@@ -185,7 +185,7 @@ export default function StoreCard({
               <img
                 width="220"
                 alt="Get it on Snap Store"
-                src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg"
+                src="https://raw.githubusercontent.com/picguard/picguard/main/docs/assets/Download-on-the-Snap-Store.svg"
               />
             </Link>
           </div>
