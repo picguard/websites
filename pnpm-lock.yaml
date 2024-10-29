@@ -178,8 +178,8 @@ importers:
         specifier: ^18.3.12
         version: 18.3.12
       '@types/react-big-calendar':
-        specifier: ^1.8.12
-        version: 1.8.12
+        specifier: ^1.15.0
+        version: 1.15.0
       '@types/react-dom':
         specifier: ^18.3.1
         version: 18.3.1
@@ -2274,8 +2274,8 @@ packages:
   '@types/prop-types@15.7.9':
     resolution: {integrity: sha512-n1yyPsugYNSmHgxDFjicaI2+gCNjsBck8UX9kuofAKlc0h1bL+20oSF72KeNaW2DUlesbEVCFgyV2dPGTiY42g==}
 
-  '@types/react-big-calendar@1.8.12':
-    resolution: {integrity: sha512-dN9kPm2cLgPKDVc8q7RdXMehZxQea+LlcWPB8sU3ES7S3WF/ff8e87NfhJREfzHWEeEJBx2TqRKQRkdHA9vNFw==}
+  '@types/react-big-calendar@1.15.0':
+    resolution: {integrity: sha512-eZF0HCwalF8bFaEpcxufrIEAu8m6UiTjqbuQk66i7RbuPbi4xjlJqFeQ6Pb6TCudZVZ5ttnz9AquQDvgKGM3cQ==}
 
   '@types/react-dom@18.3.1':
     resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
@@ -3094,6 +3094,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -7621,7 +7622,7 @@ snapshots:
 
   '@types/prop-types@15.7.9': {}
 
-  '@types/react-big-calendar@1.8.12':
+  '@types/react-big-calendar@1.15.0':
     dependencies:
       '@types/date-arithmetic': 4.1.4
       '@types/prop-types': 15.7.9
