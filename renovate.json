@@ -10,6 +10,14 @@
       "matchPackageNames": ["@types/node"]
     },
     {
+      "allowedVersions": "14",
+      "matchPackageNames": ["next", "eslint-config-next"]
+    },
+    {
+      "allowedVersions": "8",
+      "matchPackageNames": ["eslint"]
+    },
+    {
       "allowedVersions": "1",
       "matchPackageNames": ["http-status"]
     }
