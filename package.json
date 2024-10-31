@@ -20,7 +20,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
-    "contentlayer2": "^0.5.1",
+    "contentlayer2": "^0.5.3",
     "date-fns": "^4.1.0",
     "flag-icons": "^7.2.3",
     "focus-trap-react": "^10.3.0",
