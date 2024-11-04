@@ -17,7 +17,7 @@ export default function StoreCard({
           <span className="mb-2 mt-2 text-gray-600 dark:text-white/80">
             Free version
           </span>
-          <Link target="_blank" href="https://apps.apple.com/app/id6477481308">
+          <Link target="_blank" href="https://apps.apple.com/app/id6737562561">
             <img
               width="220"
               alt="Get it on App Store"
@@ -27,7 +27,7 @@ export default function StoreCard({
           <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
             Pro version
           </span>
-          <Link target="_blank" href="https://apps.apple.com/app/id6602890294">
+          <Link target="_blank" href="https://apps.apple.com/app/id6737562597">
             <img
               width="220"
               alt="Get it on App Store"
@@ -47,7 +47,7 @@ export default function StoreCard({
             </span>
             <Link
               target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.kjxbyz.watermarkassistant"
+              href="https://play.google.com/store/apps/details?id=com.kjxbyz.picguard"
             >
               <img
                 width="220"
@@ -60,7 +60,7 @@ export default function StoreCard({
             </span>
             <Link
               target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.kjxbyz.watermarkassistant.pro"
+              href="https://play.google.com/store/apps/details?id=com.kjxbyz.picguard.pro"
             >
               <img
                 width="220"
@@ -74,7 +74,7 @@ export default function StoreCard({
             <span className="mb-2 text-gray-600 dark:text-white/80">
               Free version
             </span>
-            <Link target="_blank" href="https://www.amazon.com/dp/B0DH3V8FQ3">
+            <Link target="_blank" href="https://www.amazon.com/dp/B0DLT8N89V">
               <img
                 width="220"
                 alt="Get it on Amazon App Store"
@@ -84,7 +84,7 @@ export default function StoreCard({
             <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
               Pro version
             </span>
-            <Link target="_blank" href="https://www.amazon.com/dp/B0DHZ7BW41">
+            <Link target="_blank" href="https://www.amazon.com/dp/B0DLT7DGBV">
               <img
                 width="220"
                 alt="Get it on Amazon App Store"
@@ -101,7 +101,7 @@ export default function StoreCard({
             </span>
             <Link
               target="_blank"
-              href="https://f-droid.org/packages/com.kjxbyz.watermarkassistant"
+              href="https://f-droid.org/packages/com.kjxbyz.picguard"
             >
               <img
                 width="220"
@@ -119,7 +119,7 @@ export default function StoreCard({
           </span>
           <Link
             target="_blank"
-            href="https://apps.apple.com/app/id6477482447?mt=12"
+            href="https://apps.apple.com/app/id6737562561?mt=12"
           >
             <img
               width="220"
@@ -132,7 +132,7 @@ export default function StoreCard({
           </span>
           <Link
             target="_blank"
-            href="https://apps.apple.com/app/id6602890242?mt=12"
+            href="https://apps.apple.com/app/id6737562597?mt=12"
           >
             <img
               width="220"
