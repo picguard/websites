@@ -36,7 +36,7 @@
     "muse-ui": "^4.0.0-alpha.5",
     "next": "14.2.16",
     "next-contentlayer2": "^0.5.1",
-    "next-themes": "^0.3.0",
+    "next-themes": "^0.4.3",
     "nextjs-toploader": "^3.7.15",
     "react": "^18.3.1",
     "react-big-calendar": "^1.15.0",
