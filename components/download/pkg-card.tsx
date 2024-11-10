@@ -23,25 +23,25 @@ export default function PkgCard({
           </span>
           <div className="mb-2 mt-2 flex flex-col px-2">
             <CopyBlock
-              text="brew install picguard/picguard/picguard"
+              text="brew install kjxbyz/casks/picguard"
               language="bash"
               theme={{ mode: theme as any }}
               showLineNumbers
               codeBlock
             />
           </div>
-          <span className="mt-6 text-gray-600 dark:text-white/80">
-            Nixpkgs (TODO)
-          </span>
-          <div className="mb-2 mt-2 flex flex-col px-2">
-            <CopyBlock
-              text="nix-shell -p picguard"
-              language="bash"
-              theme={{ mode: theme as any }}
-              showLineNumbers
-              codeBlock
-            />
-          </div>
+          {/*<span className="mt-6 text-gray-600 dark:text-white/80">*/}
+          {/*  Nixpkgs (TODO)*/}
+          {/*</span>*/}
+          {/*<div className="mb-2 mt-2 flex flex-col px-2">*/}
+          {/*  <CopyBlock*/}
+          {/*    text="nix-shell -p picguard"*/}
+          {/*    language="bash"*/}
+          {/*    theme={{ mode: theme as any }}*/}
+          {/*    showLineNumbers*/}
+          {/*    codeBlock*/}
+          {/*  />*/}
+          {/*</div>*/}
         </>
       ),
       windows: (
@@ -71,7 +71,7 @@ export default function PkgCard({
           <span className="mt-6 text-gray-600 dark:text-white/80">Scoop</span>
           <div className="mb-2 mt-2 flex flex-col px-2">
             <CopyBlock
-              text={`scoop bucket add scoop-bucket https://github.com/picguard/scoop-bucket\nscoop install scoop-bucket/picguard`}
+              text={`scoop bucket add kjxbyz_scoop-bucket https://github.com/kjxbyz/scoop-bucket\nscoop install kjxbyz_scoop-bucket/picguard`}
               language="bash"
               theme={{ mode: theme as any }}
               showLineNumbers
@@ -102,18 +102,18 @@ export default function PkgCard({
               codeBlock
             />
           </div>
-          <span className="mt-6 text-gray-600 dark:text-white/80">
-            Nixpkgs (TODO)
-          </span>
-          <div className="mb-2 mt-2 flex flex-col px-2">
-            <CopyBlock
-              text="nix-shell -p picguard"
-              language="bash"
-              theme={{ mode: theme as any }}
-              showLineNumbers
-              codeBlock
-            />
-          </div>
+          {/*<span className="mt-6 text-gray-600 dark:text-white/80">*/}
+          {/*  Nixpkgs (TODO)*/}
+          {/*</span>*/}
+          {/*<div className="mb-2 mt-2 flex flex-col px-2">*/}
+          {/*  <CopyBlock*/}
+          {/*    text="nix-shell -p picguard"*/}
+          {/*    language="bash"*/}
+          {/*    theme={{ mode: theme as any }}*/}
+          {/*    showLineNumbers*/}
+          {/*    codeBlock*/}
+          {/*  />*/}
+          {/*</div>*/}
           <span className="mt-6 text-gray-600 dark:text-white/80">
             Arch/Manjaro
           </span>
