@@ -68,9 +68,6 @@ importers:
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
-      lucide-react:
-        specifier: ^0.456.0
-        version: 0.456.0(react@18.3.1)
       ms:
         specifier: ^2.1.3
         version: 2.1.3
@@ -3960,11 +3957,6 @@ packages:
     resolution: {integrity: sha512-bxVL+rM/wacjpT0BKShA6r5IIKb6LCRg+ltFG9pnnIwaRX8kK3hq8v5JwMpT7RC6XeqB5cSaaV6GapPWWmtliw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
-
-  lucide-react@0.456.0:
-    resolution: {integrity: sha512-DIIGJqTT5X05sbAsQ+OhA8OtJYyD4NsEMCA/HQW/Y6ToPQ7gwbtujIoeAaup4HpHzV35SQOarKAWH8LYglB6eA==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
   luxon@3.4.4:
     resolution: {integrity: sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA==}
@@ -9624,10 +9616,6 @@ snapshots:
       yallist: 4.0.0
 
   lucide-react@0.359.0(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-
-  lucide-react@0.456.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
