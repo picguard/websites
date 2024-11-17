@@ -4,12 +4,8 @@ import Balancer from "react-wrap-balancer";
 import { RoughNotation } from "react-rough-notation";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import dynamic from "next/dynamic";
+import Card from "@/components/home/card";
 import { useTranslation } from "@/i18n/client";
-
-const DynamicCard = dynamic(() => import("@/components/home/card"), {
-  ssr: false,
-});
 
 export default function Support({
   params,
@@ -29,7 +25,7 @@ export default function Support({
           </div>
           <div className="mt-6 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {links.map(({ title, description, demo, url }) => (
-              <DynamicCard
+              <Card
                 key={title}
                 title={title}
                 description={description}

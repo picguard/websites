@@ -27,10 +27,6 @@ const Header = dynamic(() => import("@/components/layout/header"), {
   ssr: false,
 });
 
-// const ReduxProvider = dynamic(() => import("./redux-provider"), {
-//   ssr: false,
-// });
-
 export async function generateMetadata({
   params,
 }: {

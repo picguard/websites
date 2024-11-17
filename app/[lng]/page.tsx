@@ -1,7 +1,6 @@
 "use client";
 import React, { useCallback } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import Marquee from "react-fast-marquee";
@@ -19,15 +18,12 @@ import {
   RiHeart3Line,
 } from "react-icons/ri";
 import { FaBlog } from "react-icons/fa";
+import Card from "@/components/home/card";
 import Comment from "@/components/home/comment";
 import { useAppTheme } from "@/lib/hooks";
 import { useTranslation } from "@/i18n/client";
 import { basePath } from "@/constants";
 import { allPosts } from "contentlayer/generated";
-
-const DynamicCard = dynamic(() => import("@/components/home/card"), {
-  ssr: false,
-});
 
 export default function Home({
   params,
@@ -89,7 +85,7 @@ export default function Home({
         <SectionTip title={title} className={className}>
           <div className="mt-6 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {links.map(({ title, description, demo, url }) => (
-              <DynamicCard
+              <Card
                 key={title}
                 title={title}
                 description={description}
