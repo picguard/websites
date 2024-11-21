@@ -59,7 +59,6 @@ export default function Header(props: LngProps) {
                     <TooltipTrigger>
                       <Link
                         href="https://www.picguard.app/play/"
-                        target="_blank"
                         className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full transition-all duration-75 focus:outline-none active:scale-95 sm:h-9 sm:w-9"
                       >
                         <LuExternalLink className="h-5 w-5" />
@@ -79,7 +78,6 @@ export default function Header(props: LngProps) {
                     <TooltipTrigger>
                       <Link
                         href="/blog"
-                        target="_blank"
                         className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full transition-all duration-75 focus:outline-none active:scale-95 sm:h-9 sm:w-9"
                       >
                         <LuRss className="h-5 w-5" />
@@ -92,16 +90,6 @@ export default function Header(props: LngProps) {
                 </TooltipProvider>
               </div>
             </li>
-            {/*<li className="h-8 w-8 sm:h-9 sm:w-9">*/}
-            {/*  <div className="relative inline-block text-left">*/}
-            {/*    <Link*/}
-            {/*      href={`/${props.lng}/admin`}*/}
-            {/*      className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full transition-all duration-75 focus:outline-none active:scale-95 sm:h-9 sm:w-9"*/}
-            {/*    >*/}
-            {/*      <MdOutlineDashboardCustomize className="h-5 w-5" />*/}
-            {/*    </Link>*/}
-            {/*  </div>*/}
-            {/*</li>*/}
             <li className="h-8 w-8 sm:h-9 sm:w-9">
               <LngDropdown lng={props.lng} />
             </li>

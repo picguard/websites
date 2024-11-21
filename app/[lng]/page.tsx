@@ -197,7 +197,6 @@ export default function Home({
           <Link
             className="flex min-w-32 max-w-fit items-center justify-center space-x-2 rounded-full bg-blue-300 px-5 py-2 text-sm text-gray-700 shadow-md transition-colors hover:bg-blue-400 dark:bg-blue-500 dark:text-white/80 dark:hover:bg-blue-600"
             href="download"
-            target="_blank"
             rel="noopener noreferrer"
           >
             <RiDownload2Line className="h-6 w-6" />
@@ -208,7 +207,6 @@ export default function Home({
           <Link
             className="flex min-w-32 max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 dark:bg-black dark:text-white/80"
             href="support"
-            target="_blank"
             rel="noopener noreferrer"
           >
             <RiCommunityLine className="h-6 w-6" />
