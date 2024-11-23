@@ -1,5 +1,9 @@
 export type SystemOS = "ios" | "android" | "macos" | "windows" | "linux";
 
+export type SystemOSName = {
+  [key: SystemOS]: string;
+};
+
 export interface Ext {
   name: string;
   include?: boolean;

@@ -6,37 +6,22 @@ import { ToggleGroup, ToggleGroupItem } from "muse-ui";
 import BinariesCard from "@/components/download/binaries-card";
 import PkgCard from "@/components/download/pkg-card";
 import StoreCard from "@/components/download/store-card";
-import { platforms, systemExtensions } from "@/constants";
-import { getReleases } from "@/request";
+import { platforms, platformNames, systemExtensions } from "@/constants";
+import { getLatestRelease } from "@/request";
 import { useTranslation } from "@/i18n/client";
 import type { ExtType, SystemOS } from "@/types/common";
 import type { Asset, Release } from "@/types/github";
 
 export default function Home({
-  params,
+  params: { lng },
 }: {
   params: {
     lng: string;
   };
 }) {
-  const { t } = useTranslation(params.lng, "common");
-
+  const { t } = useTranslation(lng, "common");
   const [platform, setPlatform] = useState<SystemOS>("android");
-  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<Release>({});
-  const [error, setError] = useState<any>(null);
-
-  const assets = useMemo(() => {
-    if (data.assets && data.assets.length) {
-      return data.assets;
-    }
-
-    return [];
-  }, [data.assets]);
-
-  const tag_name = useMemo(() => {
-    return data.tag_name;
-  }, [data.tag_name]);
 
   /**
    * exclude匹配逻辑
@@ -98,39 +83,30 @@ export default function Home({
     };
     platforms.forEach((platform: SystemOS) => {
       packages[platform] =
-        assets.filter(({ name }) => name && matcher(name, platform)) || [];
+        data?.assets?.filter(({ name }) => name && matcher(name, platform)) ||
+        [];
     });
     return packages;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [assets]);
+  }, [data?.assets]);
 
   const loadData = () => {
-    setLoading(true);
-    getReleases(1, 1)
+    getLatestRelease()
       .then((res) => {
-        setLoading(false);
         if (res?.code === 0) {
-          setData(res?.data?.[0] || {});
+          setData(res?.data || {});
         } else {
-          setError(res?.msg);
+          console.error(res?.msg);
         }
       })
       .catch((error) => {
         console.error(error);
-        setLoading(false);
-        setError(error.message || error.toString());
       });
   };
 
   useEffect(() => {
     loadData();
   }, []);
-
-  const disabled = useMemo(() => {
-    if (loading) return true;
-
-    return !!error;
-  }, [loading, error]);
 
   return (
     <>
@@ -147,20 +123,20 @@ export default function Home({
         style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
       >
         <Balancer>
-          {tag_name && (
+          {data?.tag_name && (
             <>
-              {t("latest")}:{" "}
+              {t("latest")}:&nbsp;
               <Link
                 className="text-[#3e8fc8]"
-                href={`https://github.com/picguard/picguard/releases/tag/${tag_name}`}
+                href={`https://github.com/picguard/picguard/releases/tag/${data?.tag_name}`}
                 target="_blank"
               >
-                {tag_name}
+                {data?.tag_name}
               </Link>
             </>
           )}
           <Link
-            href={`/${params.lng}/releases`}
+            href={`/${lng}/releases`}
             className="ml-2 text-sm text-gray-500 hover:underline dark:text-gray-400"
           >
             {t("more-versions")}
@@ -176,33 +152,28 @@ export default function Home({
           if (value) setPlatform(value as SystemOS);
         }}
       >
-        <ToggleGroupItem className="font-bold" size="lg" value="android">
-          Android
-        </ToggleGroupItem>
-        <ToggleGroupItem className="font-bold" size="lg" value="ios">
-          iOS
-        </ToggleGroupItem>
-        <ToggleGroupItem className="font-bold" size="lg" value="macos">
-          macOS
-        </ToggleGroupItem>
-        <ToggleGroupItem className="font-bold" size="lg" value="windows">
-          Windows
-        </ToggleGroupItem>
-        <ToggleGroupItem className="font-bold" size="lg" value="linux">
-          Linux
-        </ToggleGroupItem>
+        {Object.entries<string>(platformNames).map(([platform, name]) => (
+          <ToggleGroupItem
+            key={platform}
+            className="font-bold"
+            size="lg"
+            value={platform}
+          >
+            {name}
+          </ToggleGroupItem>
+        ))}
       </ToggleGroup>
       <div
         className={`mb-20 mt-16 w-full max-w-screen-xl animate-fade-up px-5 xl:px-0`}
       >
         <div className="mt-6 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          <StoreCard lng={params.lng} platform={platform} />
+          <StoreCard lng={lng} platform={platform} />
           <BinariesCard
-            lng={params.lng}
+            lng={lng}
             platform={platform}
             assets={availableAssets[platform]}
           />
-          <PkgCard lng={params.lng} platform={platform} />
+          <PkgCard lng={lng} platform={platform} />
         </div>
       </div>
     </>
