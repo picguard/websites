@@ -22,6 +22,8 @@ export default function StoreCard({
               width="220"
               alt="Get it on App Store"
               src="/images/Download-on-the-App-Store.svg"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
           <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
@@ -32,6 +34,8 @@ export default function StoreCard({
               width="220"
               alt="Get it on App Store"
               src="/images/Download-on-the-App-Store.svg"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
         </>
@@ -53,6 +57,8 @@ export default function StoreCard({
                 width="220"
                 alt="Get it on Google Play"
                 src="/images/Download-on-the-Google-Play.png"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
             <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
@@ -66,6 +72,8 @@ export default function StoreCard({
                 width="220"
                 alt="Get it on Google Play"
                 src="/images/Download-on-the-Google-Play.png"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>
@@ -79,6 +87,8 @@ export default function StoreCard({
                 width="220"
                 alt="Get it on Amazon App Store"
                 src="/images/Download-on-the-Amazon-App-Store.png"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
             <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
@@ -89,6 +99,8 @@ export default function StoreCard({
                 width="220"
                 alt="Get it on Amazon App Store"
                 src="/images/Download-on-the-Amazon-App-Store.png"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>
@@ -107,6 +119,8 @@ export default function StoreCard({
                 width="220"
                 alt="Get it on F-Droid"
                 src="/images/Download-on-the-F-Droid.svg"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
           </div> */}
@@ -125,6 +139,8 @@ export default function StoreCard({
               width="220"
               alt="Get it on Mac App Store"
               src="/images/Download-on-the-Mac-App-Store.svg"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
           <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
@@ -138,6 +154,8 @@ export default function StoreCard({
               width="220"
               alt="Get it on Mac App Store"
               src="/images/Download-on-the-Mac-App-Store.svg"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
         </>
@@ -155,6 +173,8 @@ export default function StoreCard({
               width="220"
               alt="Get it on Windows Store"
               src="https://get.microsoft.com/images/en-us%20dark.svg"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
           <span className="mb-2 mt-4 text-gray-600 dark:text-white/80">
@@ -168,6 +188,8 @@ export default function StoreCard({
               width="220"
               alt="Get it on Windows Store"
               src="https://get.microsoft.com/images/en-us%20dark.svg"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
         </>
@@ -186,6 +208,8 @@ export default function StoreCard({
                 width="220"
                 alt="Get it on Snap Store"
                 src="/images/Download-on-the-Snap-Store.svg"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>
@@ -202,6 +226,8 @@ export default function StoreCard({
                 width="220"
                 alt="Get it on Flathub"
                 src="https://flathub.org/assets/badges/flathub-badge-en.png"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>

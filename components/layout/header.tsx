@@ -39,11 +39,13 @@ export default function Header(props: LngProps) {
           className="font-display flex items-center text-2xl"
         >
           <Image
+            className="mr-2 rounded-sm"
             src={`${basePath}/logo.png`}
-            alt="logo"
+            alt="PicGuard logo"
             width="30"
             height="30"
-            className="mr-2 rounded-sm"
+            loading="lazy"
+            decoding="async"
           ></Image>
           <p>{t("title")}</p>
         </Link>
