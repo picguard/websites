@@ -1,6 +1,9 @@
-import { type ClassValue, clsx } from "clsx";
+import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import ms from "ms";
+import { systemExtensions } from "@/constants";
+import type { ClassValue } from "clsx";
+import type { ExtType, SystemOS } from "@/types/common";
 
 export const timeAgo = (timestamp: Date, timeOnly?: boolean): string => {
   if (!timestamp) return "never";
@@ -67,3 +70,53 @@ export const truncate = (str: string, length: number) => {
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+/**
+ * exclude匹配逻辑
+ *
+ * @param name 文件名
+ * @param exclude 排除字符串或字符串数组
+ * @returns
+ */
+export const excludeMatcher = (name: string, exclude: string | string[]) => {
+  if (typeof exclude === "string") {
+    return name.includes(exclude);
+  } else {
+    return exclude.findLastIndex((item) => name.includes(item)) !== -1;
+  }
+};
+
+/**
+ * 根据宿主系统进行分组
+ *
+ * @param name 文件名
+ * @param platform 宿主系统
+ * @returns
+ */
+export const matcher = (name: string, platform: SystemOS) =>
+  systemExtensions[platform].some((ext: ExtType) => {
+    // 如果是字符串, 直接判断文件后缀
+    if (typeof ext === "string") {
+      return name.endsWith(ext);
+    } else {
+      // 如果不是字符串类型, 则根据include的值来判断
+      // 1. 如果为true, 判断文件后缀和系统类型
+      // 2. 如果为false, 直接判断文件后缀
+      const include = ext?.include;
+      const exclude = ext?.exclude;
+      const extName = ext?.name;
+
+      // 如果不为空, 则排出包含此内容的文件
+      if (exclude) {
+        return include
+          ? name.endsWith(extName) &&
+              name.includes(platform) &&
+              !excludeMatcher(name, exclude)
+          : name.endsWith(extName) && !excludeMatcher(name, exclude);
+      }
+
+      return include
+        ? name.endsWith(extName) && name.includes(platform)
+        : name.endsWith(extName);
+    }
+  });

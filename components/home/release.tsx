@@ -1,9 +1,12 @@
 "use client";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import Image from "next/image";
 import { FaDownload } from "react-icons/fa6";
 import GitHubPkg from "@/components/home/github-pkg";
-import type { Release } from "@/types/github";
+import { platforms } from "@/constants";
+import { matcher } from "@/lib/utils";
+import type { SystemOS } from "@/types/common";
+import type { Asset, Release } from "@/types/github";
 import type { LngProps } from "@/types/i18next-lng";
 
 export default function Release({
@@ -11,6 +14,29 @@ export default function Release({
   first,
   lng,
 }: { release: Release; first: boolean } & LngProps) {
+  const availableAssets = useMemo(() => {
+    const packages: Record<SystemOS, Asset[]> = {
+      ios: [],
+      android: [],
+      macos: [],
+      windows: [],
+      linux: [],
+    };
+    platforms.forEach((platform: SystemOS) => {
+      packages[platform] =
+        release?.assets?.filter(
+          ({ name }) => name && matcher(name, platform),
+        ) || [];
+    });
+    return packages;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [release?.assets]);
+
+  const assets = useMemo(() => {
+    const { android, ios, macos, windows, linux } = availableAssets;
+    return android.concat(ios).concat(macos).concat(windows).concat(linux);
+  }, [availableAssets]);
+
   const Badge = useCallback(() => {
     if (!release.prerelease && !release.draft && first) {
       return (
@@ -79,13 +105,13 @@ export default function Release({
             />
           </dd>
         </div>
-        <GitHubPkg assets={release?.assets || []} lng={lng} disabled={false}>
+        <GitHubPkg assets={assets || []} lng={lng} disabled={false}>
           <div className="flex cursor-pointer items-center gap-x-2.5 text-gray-500 hover:text-[#3E8FC8] dark:text-gray-400 dark:hover:text-[#3E8FC8]">
             <dt>
               <span className="sr-only">Total assets</span>
               <FaDownload className="h-5 w-5" aria-hidden="true" />
             </dt>
-            <dd className="text-sm leading-6">{release?.assets?.length}</dd>
+            <dd className="text-sm leading-6">{assets?.length}</dd>
           </div>
         </GitHubPkg>
       </dl>

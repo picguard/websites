@@ -6,10 +6,11 @@ import { ToggleGroup, ToggleGroupItem } from "muse-ui";
 import BinariesCard from "@/components/download/binaries-card";
 import PkgCard from "@/components/download/pkg-card";
 import StoreCard from "@/components/download/store-card";
-import { platforms, platformNames, systemExtensions } from "@/constants";
+import { platforms, platformNames } from "@/constants";
 import { getLatestRelease } from "@/request";
 import { useTranslation } from "@/i18n/client";
-import type { ExtType, SystemOS } from "@/types/common";
+import { matcher } from "@/lib/utils";
+import type { SystemOS } from "@/types/common";
 import type { Asset, Release } from "@/types/github";
 
 export default function Home({
@@ -22,56 +23,6 @@ export default function Home({
   const { t } = useTranslation(lng, "common");
   const [platform, setPlatform] = useState<SystemOS>("android");
   const [data, setData] = useState<Release>({});
-
-  /**
-   * exclude匹配逻辑
-   *
-   * @param name 文件名
-   * @param exclude 排除字符串或字符串数组
-   * @returns
-   */
-  const excludeMatcher = (name: string, exclude: string | string[]) => {
-    if (typeof exclude === "string") {
-      return name.includes(exclude);
-    } else {
-      return exclude.findLastIndex((item) => name.includes(item)) !== -1;
-    }
-  };
-
-  /**
-   * 根据宿主系统进行分组
-   *
-   * @param name 文件名
-   * @param platform 宿主系统
-   * @returns
-   */
-  const matcher = (name: string, platform: SystemOS) =>
-    systemExtensions[platform].some((ext: ExtType) => {
-      // 如果是字符串, 直接判断文件后缀
-      if (typeof ext === "string") {
-        return name.endsWith(ext);
-      } else {
-        // 如果不是字符串类型, 则根据include的值来判断
-        // 1. 如果为true, 判断文件后缀和系统类型
-        // 2. 如果为false, 直接判断文件后缀
-        const include = ext?.include;
-        const exclude = ext?.exclude;
-        const extName = ext?.name;
-
-        // 如果不为空, 则排出包含此内容的文件
-        if (exclude) {
-          return include
-            ? name.endsWith(extName) &&
-                name.includes(platform) &&
-                !excludeMatcher(name, exclude)
-            : name.endsWith(extName) && !excludeMatcher(name, exclude);
-        }
-
-        return include
-          ? name.endsWith(extName) && name.includes(platform)
-          : name.endsWith(extName);
-      }
-    });
 
   const availableAssets = useMemo(() => {
     const packages: Record<SystemOS, Asset[]> = {
