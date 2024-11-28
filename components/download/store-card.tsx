@@ -104,9 +104,7 @@ export default function StoreCard({
               />
             </Link>
           </div>
-          {/* <span className="mt-6 text-gray-600 dark:text-white/80">
-            F-Droid (TODO)
-          </span>
+          <span className="mt-6 text-gray-600 dark:text-white/80">F-Droid</span>
           <div className="mb-2 mt-2 flex flex-col px-2">
             <span className="mb-2 text-gray-600 dark:text-white/80">
               Free version
@@ -123,7 +121,7 @@ export default function StoreCard({
                 decoding="async"
               />
             </Link>
-          </div> */}
+          </div>
         </>
       ),
       macos: (
