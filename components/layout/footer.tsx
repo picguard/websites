@@ -14,7 +14,7 @@ function Footer(props: LngProps) {
   return (
     <div className="w-full border-b border-gray-200 py-5 text-center dark:border-gray-700">
       <p className="text-gray-500 dark:text-white/80">
-        {t("footer")}{" "}
+        {t("footer")}&nbsp;
         <a
           className="font-medium text-gray-800 underline transition-colors dark:text-white/90"
           href="https://github.com/picguard/websites"
@@ -32,7 +32,7 @@ function Footer(props: LngProps) {
         >
           {t("privacy")}
         </Link>
-        &nbsp;&nbsp;
+        &nbsp;
         <Link
           className="font-medium text-gray-800 underline transition-colors dark:text-white/90"
           href={`/${props.lng}/legal/terms-of-use`}
@@ -42,24 +42,14 @@ function Footer(props: LngProps) {
         </Link>
       </p>
       <span className="mt-2 flex flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-        © {`2023${fullYear === 2023 ? "" : `-${fullYear}`}`}&nbsp;
+        &copy;&nbsp;{`2023${fullYear === 2023 ? "" : `-${fullYear}`}`}&nbsp;
         <Link href={`/${props.lng}`} rel="noopener noreferrer">
           {th("title")}
         </Link>
-        . {t("copyright")}&nbsp;
+        .&nbsp;{t("copyright")}&nbsp;
         {VERCEL_GIT_COMMIT_SHA && (
-          <p className="flex items-center justify-center">
-            <a
-              href={`https://github.com/picguard/websites/commit/${VERCEL_GIT_COMMIT_SHA}`}
-              target="_blank"
-              className="hover:underline"
-              rel="noreferrer"
-            >
-              {VERCEL_GIT_COMMIT_SHA.substring(0, 8)}
-            </a>
-          </p>
+          <>{VERCEL_GIT_COMMIT_SHA.substring(0, 8)}&nbsp;</>
         )}
-        &nbsp;
         <Image
           src="https://visitor-badge.laobi.icu/badge?page_id=watermark-assistant.kjxbyz.com"
           width={60}
