@@ -8,7 +8,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { BiArrowToTop } from "react-icons/bi";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "muse-ui";
-import CookieBanner from "@/components/shared/cookie-banner";
+import CookieYes from "@/components/shared/cookie-yes";
 import ScrollToTop from "@/components/layout/scroll-to-top";
 import { languages } from "@/i18n/settings";
 import Footer from "@/components/layout/footer";
@@ -83,7 +83,6 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer lng={params.lng} />
-          <CookieBanner lng={params.lng} />
           <Toaster />
         </ThemeProvider>
         <ScrollToTop
@@ -93,6 +92,7 @@ export default async function RootLayout({
           }
         />
       </body>
+      <CookieYes lng={params.lng} />
       {GA_TRACKING_ID && <GoogleAnalytics gaId={GA_TRACKING_ID} />}
     </html>
   );
