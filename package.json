@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
+    "@next/third-parties": "14.2.18",
     "@octokit/rest": "^21.0.2",
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",

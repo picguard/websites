@@ -11,7 +11,7 @@
     },
     {
       "allowedVersions": "14",
-      "matchPackageNames": ["next", "eslint-config-next"]
+      "matchPackageNames": ["next", "eslint-config-next", "@next/third-parties"]
     },
     {
       "allowedVersions": "8",

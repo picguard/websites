@@ -4,10 +4,10 @@ import cx from "classnames";
 import { dir } from "i18next";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { BiArrowToTop } from "react-icons/bi";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "muse-ui";
-import GoogleAnalytics from "@/components/shared/google-analytics";
 import CookieBanner from "@/components/shared/cookie-banner";
 import ScrollToTop from "@/components/layout/scroll-to-top";
 import { languages } from "@/i18n/settings";
@@ -22,6 +22,8 @@ const NEXT_PUBLIC_SHOW_PARTICLES = process.env.NEXT_PUBLIC_SHOW_PARTICLES;
 // 是否全站置灰
 const NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY =
   process.env.NEXT_PUBLIC_WEBSITE_GLOBAL_GRAY;
+// Google tag (gtag.js)
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ID;
 
 const Header = dynamic(() => import("@/components/layout/header"), {
   ssr: false,
@@ -79,7 +81,6 @@ export default async function RootLayout({
             className="flex w-full flex-1 flex-col items-center justify-center pt-32"
           >
             {children}
-            <GoogleAnalytics />
           </main>
           <Footer lng={params.lng} />
           <CookieBanner lng={params.lng} />
@@ -92,6 +93,7 @@ export default async function RootLayout({
           }
         />
       </body>
+      {GA_TRACKING_ID && <GoogleAnalytics gaId={GA_TRACKING_ID} />}
     </html>
   );
 }
