@@ -1,5 +1,5 @@
 export const fallbackLng = "en";
-export const languages = [fallbackLng, "zh"];
+export const languages = [fallbackLng, "zh", "it"];
 export const defaultNS = "common";
 
 export function getOptions(
