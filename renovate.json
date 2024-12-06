@@ -10,6 +10,15 @@
       "matchPackageNames": ["@types/node"]
     },
     {
+      "allowedVersions": "18",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom"
+      ]
+    },
+    {
       "allowedVersions": "14",
       "matchPackageNames": ["next", "eslint-config-next", "@next/third-parties"]
     },
