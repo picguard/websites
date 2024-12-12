@@ -24,7 +24,7 @@
     "contentlayer2": "^0.5.3",
     "date-fns": "^4.1.0",
     "flag-icons": "^7.2.3",
-    "focus-trap-react": "^11.0.0",
+    "focus-trap-react": "^11.0.1",
     "framer-motion": "^11.13.4",
     "http-status": "^1.8.1",
     "i18next": "^24.0.5",
