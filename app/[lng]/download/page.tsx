@@ -59,6 +59,17 @@ export default function Home({
     loadData();
   }, []);
 
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent;
+    const substrings = ["iP", "Android", "Macintosh", "Win", "X11"];
+    const idx = substrings.findIndex((s) => userAgent.includes(s));
+    console.log("userAgent", userAgent, "idx", idx);
+    if (idx !== -1) {
+      const detectPlatform = platforms[idx];
+      setPlatform(detectPlatform);
+    }
+  }, []);
+
   return (
     <>
       <div className="w-full max-w-xl px-5 xl:px-0">
