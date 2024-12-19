@@ -56,7 +56,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tsparticles": "^3.7.1",
     "use-debounce": "^10.0.4",
-    "vaul": "^1.1.1",
+    "vaul": "^1.1.2",
     "zod": "^3.24.0"
   },
   "devDependencies": {
