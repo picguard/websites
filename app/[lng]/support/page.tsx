@@ -2,8 +2,8 @@
 import { useCallback } from "react";
 import Balancer from "react-wrap-balancer";
 import { RoughNotation } from "react-rough-notation";
-import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { IssueOpenedIcon, CommentDiscussionIcon } from "@primer/octicons-react";
 import Card from "@/components/home/card";
 import { useTranslation } from "@/i18n/client";
 
@@ -83,22 +83,22 @@ const apps = [
     large: false,
   },
   {
-    title: "GitHub Discussions",
-    description:
-      "We're using `GitHub Discussions` as a place to connect with other members of our community.",
-    demo: (
-      <FaGithub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
-    ),
-    url: "https://github.com/picguard/picguard/discussions",
-    large: false,
-  },
-  {
     title: "GitHub Issues",
     description:
       "Please report any issues you encounter while using the app in `GitHub Issues`.",
     demo: (
-      <FaGithub className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+      <IssueOpenedIcon className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
     ),
     url: "https://github.com/picguard/picguard/issues",
+  },
+  {
+    title: "GitHub Discussions",
+    description:
+      "We're using `GitHub Discussions` as a place to connect with other members of our community.",
+    demo: (
+      <CommentDiscussionIcon className="h-24 w-24 text-gray-600 transition-all dark:text-white/80" />
+    ),
+    url: "https://github.com/picguard/picguard/discussions",
+    large: false,
   },
 ];

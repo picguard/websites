@@ -14,6 +14,7 @@
     "@hookform/resolvers": "^3.9.1",
     "@next/third-parties": "14.2.20",
     "@octokit/rest": "^21.0.2",
+    "@primer/octicons-react": "^19.14.0",
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "accept-language": "^3.0.20",
