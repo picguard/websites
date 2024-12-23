@@ -22,7 +22,6 @@ import Card from "@/components/home/card";
 import Comment from "@/components/home/comment";
 import { useAppTheme } from "@/lib/hooks";
 import { useTranslation } from "@/i18n/client";
-import { basePath } from "@/constants";
 import { allPosts } from "contentlayer/generated";
 
 export default function Home({
@@ -162,7 +161,7 @@ export default function Home({
           <Image
             className="rounded-full"
             alt="PicGuard logo"
-            src={`${basePath}/logo.png`}
+            src="/logo.png"
             width={160}
             height={160}
             loading="lazy"

@@ -12,7 +12,6 @@ import useScroll from "@/lib/hooks/use-scroll";
 import LngDropdown from "./lng-dropdown";
 import ThemeDropdown from "./theme-dropdown";
 import { useTranslation } from "@/i18n/client";
-import { basePath } from "@/constants";
 import type { LngProps } from "@/types/i18next-lng";
 
 export default function Header(props: LngProps) {
@@ -40,7 +39,7 @@ export default function Header(props: LngProps) {
         >
           <Image
             className="mr-2 rounded-sm"
-            src={`${basePath}/logo.png`}
+            src="/logo.png"
             alt="PicGuard logo"
             width="30"
             height="30"

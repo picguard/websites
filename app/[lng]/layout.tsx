@@ -40,7 +40,7 @@ export async function generateMetadata({
       "PicGuard - This app can add watermarks to pictures to prevent them from being used maliciously.",
     metadataBase: new URL(domain),
     icons: {
-      icon: `${domain}/logo.png`,
+      icon: "/logo.png",
     },
   };
 }

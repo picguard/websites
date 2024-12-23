@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
-import { basePath } from "@/constants";
 
 export const runtime = "edge";
 export const alt = "PicGuard";
@@ -27,7 +26,7 @@ export default async function OG() {
         }}
       >
         <img
-          src={`${basePath}/logo.png`}
+          src="/logo.png"
           alt={alt}
           tw="w-20 h-20 mb-4 opacity-95 rounded-full"
         />
