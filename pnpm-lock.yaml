@@ -57,8 +57,8 @@ importers:
         specifier: ^11.15.0
         version: 11.15.0(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       http-status:
-        specifier: ^1.8.1
-        version: 1.8.1
+        specifier: ^2.0.0
+        version: 2.0.0
       i18next:
         specifier: ^24.2.0
         version: 24.2.0(typescript@5.7.2)
@@ -3193,6 +3193,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -3561,8 +3562,8 @@ packages:
   html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
 
-  http-status@1.8.1:
-    resolution: {integrity: sha512-YQF7j8Qf/Rlby0IbRPiWfNZt6aeUv3K0Pi0x3crbMZN+7F8dPn5k4b3n897vpM1Vk8Mg2fhOYc9fktKEQWMy/Q==}
+  http-status@2.0.0:
+    resolution: {integrity: sha512-fmtDiMjseYigum9OwVYJD2RD6tRYV4tzRrT92/aLSOS2bNPvz3jx8aHFqJ4Nq4ZLydalwuyh2Q6VuHg7qbCbJQ==}
     engines: {node: '>= 0.4.0'}
 
   human-signals@5.0.0:
@@ -9298,7 +9299,7 @@ snapshots:
 
   html-void-elements@3.0.0: {}
 
-  http-status@1.8.1: {}
+  http-status@2.0.0: {}
 
   human-signals@5.0.0: {}
 
