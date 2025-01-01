@@ -51,8 +51,8 @@ importers:
         specifier: ^7.2.3
         version: 7.2.3
       focus-trap-react:
-        specifier: ^11.0.1
-        version: 11.0.1(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^11.0.2
+        version: 11.0.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       framer-motion:
         specifier: ^11.15.0
         version: 11.15.0(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3193,6 +3193,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -3321,8 +3322,8 @@ packages:
   flatted@3.2.9:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
 
-  focus-trap-react@11.0.1:
-    resolution: {integrity: sha512-vxv2lglW41sBgREiVbWUMf0QzCDn84lCQhfdyELNPkfsH2VdB3XheEYBk2HK/XhpghBtbkXCGORPX6otehi+uw==}
+  focus-trap-react@11.0.2:
+    resolution: {integrity: sha512-x9sNgXhaWyq1idKW11pJftDZ3WIWgpXc9aWEU3GmLNjso3RHzyaPCBjxftoEXYJZDoq5iUlLThZ3GUf7csyJBA==}
     peerDependencies:
       '@types/react': ^18.0.0 || ^19.0.0
       '@types/react-dom': ^18.0.0 || ^19.0.0
@@ -8995,7 +8996,7 @@ snapshots:
 
   flatted@3.2.9: {}
 
-  focus-trap-react@11.0.1(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  focus-trap-react@11.0.2(@types/react-dom@18.3.5(@types/react@18.3.18))(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@types/react': 18.3.18
       '@types/react-dom': 18.3.5(@types/react@18.3.18)
